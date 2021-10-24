@@ -153,7 +153,6 @@ function init() {
     popupView.addHandlerPopup(controlPopup);
     resultsView.addHandlerScroll(scrollToRecipe);
     map.mapLeaflet();
-    console.log('Welcome');
 }
 
 init();
