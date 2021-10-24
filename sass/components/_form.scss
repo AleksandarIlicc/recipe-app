@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+
+.form {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(70, 70, 70, 0.9);
+  z-index: 1000;
+
+  &__active {
+    display: block;
+  }
+
+  &__forms {
+    width: 70%;
+    height: 73%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+    @media only screen and (max-width: 48em) {
+      width: 90%;
+    }
+
+    @media only screen and (max-width: 30em) {
+      width: 95%;
+      height: 80%;
+    }
+  }
+
+  &__buttons {
+    min-width: 35rem;
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 30em) {
+      min-width: 90%;
+    }
+  }
+
+  &__box {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        70deg,
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(255, 255, 255, 0.7) 50%,
+        transparent 50%
+      ),
+      url(../../images/form.jpg);
+    background-position: top;
+    background-size: cover;
+    border-radius: 5px;
+    display: flex;
+
+    @media only screen and (max-width: 30em) {
+      flex-direction: column;
+    }
+
+    &--left {
+      flex-basis: 50%;
+      padding: 2rem;
+      @include flex(center);
+      flex-direction: column;
+
+      @media only screen and (max-width: 30em) {
+        flex-basis: 120%;
+      }
+
+      & h2 {
+        font-family: 'Ephesis', cursive;
+        font-size: 3.2rem;
+      }
+    }
+
+    &--right {
+      flex-basis: 50%;
+    }
+  }
+
+  &__form {
+    width: 85%;
+
+    @media only screen and (max-width: 30em) {
+      width: 100%;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: $small-fs;
+    font-weight: 600;
+    font-style: italic;
+    color: black;
+    margin-bottom: 0.5rem;
+  }
+
+  & .input-area {
+    width: 100%;
+    height: 4rem;
+    position: relative;
+
+    & input {
+      font-size: $medium-fs;
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      border: none;
+      outline: none;
+
+      &:focus {
+        border: 3px solid $green-cl;
+      }
+    }
+  }
+
+  &__text a {
+    text-decoration: none;
+    color: $red-cl;
+  }
+
+  &__times {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+
+    @media only screen and (max-width: 30em) {
+      top: 0.3rem;
+      right: 1rem;
+    }
+  }
+
+  & input[type='submit'] {
+    width: 100%;
+    padding: 1rem 0;
+    background: $green-cl;
+    border: none;
+    border-radius: 0.3rem;
+    text-align: center;
+    font-size: $default-fs;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+
+    @media only screen and (max-width: 30em) {
+      margin-top: 10rem;
+    }
+  }
+
+  &__form .field .form__icon {
+    font-size: $default-fs;
+    color: $red-cl;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+  }
+
+  &__form .field .errorIcon {
+    visibility: hidden;
+  }
+
+  &__form .field.errorIcon .errorIcon {
+    visibility: visible;
+  }
+
+  &__form .field.shake {
+    animation: shake 0.3s linear;
+  }
+
+  &__form .field .form-error--text {
+    font-size: 1.4rem;
+    color: $red-cl;
+    margin-top: 0.5rem;
+    align-self: start;
+  }
+
+  &__form .field .error {
+    display: none;
+  }
+
+  &__form .field.error .error {
+    display: block;
+  }
+
+  &__form .field .errorLenght {
+    display: none;
+  }
+
+  &__form .field.errorLenght .errorLenght {
+    display: block;
+  }
+
+  &__form .field .errorInvalid {
+    display: none;
+  }
+
+  &__form .field.errorInvalid .errorInvalid {
+    display: block;
+  }
+}
+
+.form__heading {
+  @media only screen and (max-width: 30em) {
+    color: $white-cl;
+  }
+}
+
+#signUp,
+#logIn {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+#signUp {
+  top: 0;
+  left: -100%;
+}
+
+#logIn {
+  top: 0;
+  left: 0;
+}
+
+::-webkit-input-placeholder {
+  color: $text-cl;
+}
+::-moz-placeholder {
+  color: $text-cl;
+}

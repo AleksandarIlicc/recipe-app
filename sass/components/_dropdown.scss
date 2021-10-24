@@ -1,0 +1,108 @@
+.dropdown {
+  list-style: none;
+  position: absolute;
+  top: 5.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 25rem;
+  font-size: $small-fs;
+  max-height: auto;
+  display: none;
+  background: rgb(87, 87, 87);
+
+  @media only screen and (max-width: 56.25em) {
+    display: block;
+    position: relative;
+    top: 1rem;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.3s ease;
+
+    &--active {
+      max-height: 100%;
+      transform: scaleY(1);
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 1rem;
+    transition: background 0.3s ease-in-out;
+
+    @media only screen and (max-width: 56.25em) {
+      padding: 1rem;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgb(142, 142, 142);
+    }
+
+    &:hover {
+      background: rgb(142, 142, 142);
+
+      @media only screen and (max-width: 56.25em) {
+        background: none;
+      }
+    }
+
+    &:hover .sub-dropdown {
+      display: block;
+    }
+
+    &:hover .dropdown__icon {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__link {
+    color: $white-cl;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @media only screen and (max-width: 56.25em) {
+      font-size: $default-fs;
+    }
+  }
+
+  &__icon {
+    font-size: $default-fs;
+    position: absolute;
+    top: 1.3rem;
+    right: 1rem;
+    margin-left: auto;
+    color: $white-cl;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.sub-dropdown {
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 1rem;
+  right: -12rem;
+  min-width: 12rem;
+  font-size: $small-fs;
+  border: 2px solid $white-cl;
+  background: rgb(87, 87, 87);
+
+  @media only screen and (max-width: 56.25em) {
+    display: block;
+    position: relative;
+    left: 0;
+    border: none;
+    background: rgb(62, 62, 62);
+    max-height: 0;
+    transform: scale(0);
+    transform-origin: top;
+    transition: all 0.2s ease;
+
+    &--active {
+      max-height: 100%;
+      transform: scale(1);
+    }
+  }
+}

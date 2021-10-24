@@ -1,0 +1,80 @@
+.btn {
+  &__servings {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: $dark-cl--1;
+    background: transparent;
+    border: none;
+    z-index: 10;
+    cursor: pointer;
+
+    &--left {
+      left: 1rem;
+    }
+
+    &--right {
+      right: 1rem;
+    }
+  }
+
+  &__popup {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in;
+    font-size: $default-fs;
+    background: transparent;
+    color: $white-cl;
+    padding: 1rem 3rem;
+    border: 2px solid $white-cl;
+    border-radius: 0.3rem;
+    cursor: pointer;
+
+    &:hover {
+      background: rgb(70, 70, 70);
+    }
+  }
+
+  &__form {
+    width: 10rem;
+    font-size: $small-fs;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    color: $white-cl;
+    background: #a67500;
+    border: none;
+    border-radius: 0.3rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(255, 255, 255, 0.7);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20%;
+      height: 100%;
+      background: #cecece;
+      transform: rotate(25deg) scale(5) translateX(-100%);
+      transition: all 0.7s ease;
+      z-index: -1;
+    }
+
+    &:hover::after {
+      transform: rotate(25deg) scale(5) translateX(350%);
+    }
+  }
+}

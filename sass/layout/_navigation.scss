@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+.nav {
+  height: $nav-height;
+  width: 100%;
+  padding: 0 4rem;
+  @include flex(space-between);
+  background: $primary-cl;
+  box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 1000;
+
+  @media only screen and (max-width: 64em) {
+    height: 7vh;
+  }
+
+  @media only screen and (max-width: 48em) {
+    padding: 0 2rem;
+  }
+
+  &__sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  &__logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @media only screen and (max-width: 72.5em) {
+      font-size: $default-fs;
+    }
+
+    @media only screen and (max-width: 33.75em) {
+      margin-right: auto;
+    }
+
+    & a {
+      text-decoration: none;
+      font-weight: 700;
+      color: $red-cl;
+      margin-right: 0.7rem;
+    }
+
+    & .fas {
+      color: rgb(224, 146, 0);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    @include flex(center);
+    align-self: stretch;
+    max-width: 55%;
+    margin-right: 4rem;
+
+    @media only screen and (max-width: 56.25em) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 45vw;
+      max-width: 55%;
+      height: 100vh;
+      margin-right: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      background: rgba(26, 26, 26, 0.8);
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      overflow-y: auto;
+      z-index: 100;
+    }
+
+    @media only screen and (max-width: 48em) {
+      width: 50vw;
+      max-width: 100%;
+    }
+
+    @media only screen and (max-width: 43.75em) {
+      width: 70vw;
+      max-width: 100%;
+    }
+
+    @media only screen and (max-width: 30em) {
+      width: 100vw;
+      max-width: 100%;
+    }
+
+    &--active {
+      transform: translateX(0);
+    }
+
+    & > * {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      border: 1px solid rgb(210, 210, 210);
+      background: rgb(234, 234, 234);
+      transition: all 0.3s ease-in;
+      cursor: pointer;
+
+      @media only screen and (max-width: 72.5em) {
+        padding: 0 1.6rem;
+      }
+
+      @media only screen and (max-width: 56.25em) {
+        width: 100%;
+        height: min-content;
+        padding: 2rem 1rem;
+        background: none;
+        border: none;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      &:hover {
+        background: rgb(199, 199, 199);
+
+        @media only screen and (max-width: 56.25em) {
+          background: none;
+        }
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    z-index: 1;
+
+    &:hover .dropdown {
+      display: block;
+    }
+
+    &:hover .bookmark__list {
+      display: block;
+    }
+
+    &:hover .nav__icon {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__link {
+    text-transform: uppercase;
+    font-size: $small-fs;
+    font-weight: 500;
+    letter-spacing: 0.25rem;
+    color: $text-cl;
+    text-decoration: none;
+
+    @media only screen and (max-width: 56.25em) {
+      font-size: 1.8rem;
+      color: $white-cl;
+    }
+  }
+
+  &__icon {
+    font-size: $default-fs;
+    color: $black-cl;
+    margin-left: 1rem;
+    transition: transform 0.3s ease-in-out;
+
+    @media only screen and (max-width: 56.25em) {
+      color: $white-cl;
+      position: absolute;
+      top: 2.7rem;
+      right: 2rem;
+    }
+  }
+
+  &__log-in {
+    list-style-type: none;
+    padding: 0.5rem 1.4rem;
+    border: 2px solid $red-cl;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(185, 185, 185, 0.5);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: all 0.3s ease;
+    }
+
+    &:hover::after,
+    &:hover .nav__link {
+      transform: scaleX(1);
+    }
+
+    & .nav__link {
+      font-weight: 600;
+      color: $red-cl;
+      font-size: $medium-fs;
+    }
+  }
+
+  &__bar {
+    display: none;
+
+    @media only screen and (max-width: 56.25em) {
+      display: block;
+    }
+  }
+
+  &__menu {
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+
+    & span {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+    }
+
+    & img {
+      width: 4rem;
+      height: 4rem;
+
+      @media only screen and (max-width: 30em) {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+
+  &__times {
+    display: none;
+
+    @media only screen and (max-width: 56.25em) {
+      display: block;
+      font-size: $large-fs;
+      color: $white-cl;
+
+      &--icon {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        z-index: 10;
+      }
+    }
+  }
+}

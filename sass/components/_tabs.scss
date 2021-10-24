@@ -1,0 +1,41 @@
+.tabs {
+  display: flex;
+  justify-content: center;
+
+  @media only screen and (max-width: 43.75em) {
+    display: none;
+  }
+
+  & * + * {
+    margin-left: 2rem;
+  }
+
+  &__tab {
+    width: 20rem;
+    transform: translateY(50%);
+    font-size: 1.6rem;
+    border: none;
+    padding: 1rem 2rem;
+    color: $white-cl;
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-out;
+    cursor: pointer;
+
+    &--active {
+      transform: translateY(30%);
+    }
+
+    &--1 {
+      background: $red-cl;
+    }
+
+    &--2 {
+      background: $green-cl;
+    }
+
+    &--3 {
+      background: $black-cl;
+    }
+  }
+}

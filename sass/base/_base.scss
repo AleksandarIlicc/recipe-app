@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: 64em) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section {
+  padding: 3rem;
+  transition: transform 1s, opacity 1s;
+
+  &--social-media {
+    padding: 2rem;
+  }
+
+  &--hidden {
+    opacity: 0;
+    transform: translateY(8rem);
+  }
+
+  @media only screen and (max-width: 48em) {
+    padding: 2rem;
+  }
+}

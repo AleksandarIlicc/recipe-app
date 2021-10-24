@@ -1,0 +1,49 @@
+.search {
+  width: 15%;
+  height: 5vh;
+  position: relative;
+  margin-left: 4rem;
+  margin-right: auto;
+
+  @media only screen and (max-width: 56.25em) {
+    width: 30%;
+    margin-left: auto;
+    margin-right: 3rem;
+  }
+
+  @media only screen and (max-width: 33.75em) {
+    position: absolute;
+    top: 7vh;
+    left: 0;
+    width: 100%;
+    box-shadow: $box-shadow;
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    font-size: $default-fs;
+    border: none;
+    padding-left: 1rem;
+    background: $white-cl;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 0.7rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
+    font-size: $default-fs;
+    color: rgb(161, 161, 161);
+  }
+
+  &__input:focus + &__icon {
+    color: $black-cl;
+    font-size: 1.8rem;
+  }
+}

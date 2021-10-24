@@ -1,0 +1,33 @@
+.mt-large {
+  margin-top: 2.5rem;
+
+  @media only screen and (max-width: 48em) {
+    margin-top: 1rem;
+  }
+}
+.mt-medium {
+  margin-top: 2rem;
+
+  @media only screen and (max-width: 48em) {
+    margin-top: 1rem;
+  }
+}
+.mt-small {
+  margin-top: 1.5rem;
+}
+.mb-large {
+  margin-bottom: 2.5rem;
+
+  &--extra {
+    margin-bottom: 3rem;
+  }
+}
+.mb-medium {
+  margin-bottom: 2rem;
+}
+.mb-small {
+  margin-bottom: 1.5rem;
+}
+.center-tx {
+  text-align: center;
+}

@@ -1,0 +1,93 @@
+.footer {
+  &__footer {
+    padding: 3rem;
+    background: rgb(31, 31, 31);
+  }
+  &__container {
+    max-width: 120rem;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+  }
+
+  &__col {
+    width: 25%;
+
+    & > h3 {
+      color: $white-cl;
+    }
+
+    @media only screen and (max-width: 48em) {
+      width: 50%;
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__list {
+    list-style: none;
+
+    & * + * {
+      margin-top: 0.7rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: $small-fs;
+    color: $white-cl;
+  }
+
+  &__social-media {
+    display: flex;
+    align-items: center;
+
+    & > span {
+      font-size: $small-fs;
+      color: $white-cl;
+    }
+  }
+
+  &__img {
+    width: 3.5rem;
+    margin-right: 2rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__under {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 4px dotted $dark-cl--2;
+
+    @media only screen and (max-width: 30em) {
+      flex-direction: column;
+    }
+  }
+
+  &__imgBox {
+    display: flex;
+
+    & img {
+      max-width: 10rem;
+      cursor: pointer;
+    }
+
+    & * + * {
+      margin-left: 1rem;
+    }
+  }
+
+  &__copyright {
+    margin-left: 6rem;
+
+    @media only screen and (max-width: 30em) {
+      margin-top: 3rem;
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@mixin flex($justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
+
+@mixin headingPrimary {
+  font-family: 'Stick No Bills', sans-serif;
+  font-weight: 600;
+  background: linear-gradient(270deg, $green-cl--2, $green-cl);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin positionCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin socialMediaBorder($color) {
+  border: 1rem solid $color;
+
+  @media only screen and (max-width: 48em) {
+    border: 0.7rem solid $color;
+  }
+}

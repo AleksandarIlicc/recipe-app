@@ -1,0 +1,15 @@
+.errorMessage {
+  @include flex(center);
+  text-align: center;
+
+  &__message {
+    font-size: $default-fs;
+    color: $red-cl;
+  }
+
+  &__icon {
+    font-size: $default-fs;
+    color: $red-cl;
+    margin-left: 1rem;
+  }
+}

@@ -1,0 +1,100 @@
+.restaurant {
+  &__container {
+    background: $primary-cl;
+    margin-top: $mt-extra-large;
+    display: flex;
+    position: relative;
+
+    @media only screen and (max-width: 48em) {
+      margin-top: 5rem;
+      flex-direction: column;
+    }
+  }
+
+  &__restaurants {
+    flex-basis: 60%;
+
+    @media only screen and (max-width: 48em) {
+      flex-basis: 100%;
+    }
+
+    & * + * {
+      margin-top: 2rem;
+    }
+  }
+
+  &__box {
+    display: flex;
+    background: $white-cl;
+    padding: 1rem;
+    margin-right: 3rem;
+    border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.3);
+
+    @media only screen and (max-width: 48em) {
+      margin-right: 0;
+    }
+
+    @media only screen and (max-width: 30em) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    margin-left: 3rem;
+
+    @media only screen and (max-width: 30em) {
+      margin-left: 0;
+    }
+  }
+
+  &__address {
+    font-size: $default-fs;
+    color: $text-cl;
+    margin-top: 0.5rem;
+  }
+
+  &__quot {
+    max-width: 30rem;
+    font-size: 1.3rem;
+  }
+
+  &__img {
+    width: 30rem;
+
+    @media only screen and (max-width: 30em) {
+      width: 100%;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__map {
+    flex-basis: 40%;
+    height: 85vh;
+    position: sticky;
+    top: 7rem;
+
+    @media only screen and (max-width: 64em) {
+      top: 8rem;
+    }
+
+    @media only screen and (max-width: 48em) {
+      flex-basis: 100%;
+      height: 40vh;
+    }
+  }
+}
+
+#map {
+  height: 85vh;
+
+  @media only screen and (max-width: 48em) {
+    height: 40vh;
+    margin-top: 2rem;
+  }
+}

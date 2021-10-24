@@ -1,0 +1,9 @@
+.spinner {
+  @include flex(center);
+
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+    animation: spinner 1s infinite linear;
+  }
+}

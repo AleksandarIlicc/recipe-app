@@ -1,0 +1,87 @@
+.recipeItem {
+  &__card {
+    box-shadow: $box-shadow;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    & a {
+      text-decoration: none;
+    }
+
+    &:hover {
+      transform: translateY(-0.3rem);
+    }
+
+    &:hover .btn__popup {
+      top: 50%;
+    }
+
+    &:hover .recipeItem__imgOverlay {
+      opacity: 0.5;
+    }
+  }
+
+  &__img {
+    display: block;
+    height: 20rem;
+    position: relative;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__imgOverlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(102, 102, 102);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &__iconBox {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background: $white-cl;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    z-index: 10;
+
+    @include flex(center);
+  }
+
+  &__icon {
+    font-size: $large-fs;
+    color: $red-cl;
+  }
+
+  &__content {
+    padding: 2rem 1rem;
+
+    & > p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $text-cl;
+    }
+
+    & > h2 {
+      min-width: 20rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    & * + * {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

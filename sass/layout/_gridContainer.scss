@@ -1,0 +1,11 @@
+.grid__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+  grid-gap: 3rem;
+  margin-top: $mt-extra-large;
+
+  @media only screen and (max-width: 48em) {
+    margin-top: 5rem;
+  }
+}

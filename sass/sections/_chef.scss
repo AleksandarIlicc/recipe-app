@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+.chef {
+  padding: 3rem;
+  margin-top: 5rem;
+  background: $primary-cl;
+
+  &__container {
+    max-width: 100rem;
+    margin-inline: auto;
+    padding: 5rem 2rem 3rem 3rem;
+    border-radius: 0.5rem;
+    background: $white-cl;
+    box-shadow: $box-shadow;
+  }
+
+  &__name {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    color: $red-cl;
+    display: none;
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (max-width: 43.75em) {
+      display: inline-block;
+    }
+
+    @media only screen and (max-width: 30em) {
+      font-size: 3.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2rem;
+      height: 0.3rem;
+      background: $red-cl;
+    }
+
+    &::before {
+      left: -3rem;
+    }
+
+    &::after {
+      right: -3rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    display: none;
+
+    @media only screen and (max-width: 43.75em) {
+      display: block;
+
+      &--reverse {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__box--1 {
+    height: auto;
+    display: flex;
+    // height: 28rem;
+
+    @media only screen and (max-width: 43.75em) {
+      margin-top: 3rem;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      gap: 2rem;
+
+      & > div {
+        width: 50%;
+
+        @media only screen and (max-width: 30em) {
+          width: 100%;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 30em) {
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    width: 20rem;
+    height: 100%;
+    margin-right: 3rem;
+    border-radius: 0.3rem;
+
+    @media only screen and (max-width: 37.5em) {
+      width: 100%;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    & > p {
+      line-height: 2.1;
+    }
+  }
+
+  &__box--2 > h2 {
+    margin-top: 2rem;
+  }
+}
