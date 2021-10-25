@@ -40,49 +40,49 @@ class RecipeView extends View {
         
         <div class="recipe__box">
             <div>
-            <figure class="recipe__img">
-                <img src="${this._data.image_url}" alt="${this._data.title}">
-                <p class="bookmark bookmark__btn">
-                    <i class="bookmark__icon ${this._data.bookmark ? 'fas fa-bookmark' : 'far fa-bookmark'}"></i>
-                </p>
-            </figure>
-            <div class="recipe__details">
-                <p class="recipe__info">
-                    <i class="far fa-clock"></i> 
-                    <span class="recipe__info--minute">${this._data.cooking_time} </span>
-                    <span>minutes</span>
-                </p>
-                <p class="recipe__info recipe__info--right">
-                    <i class="fas fa-users"></i> 
-                    <span>Servings</span>
-                    <span class="recipe__info--people">${this._data.servings}</span>
+                <figure class="recipe__img">
+                    <img src="${this._data.image_url}" alt="${this._data.title}">
+                    <p class="bookmark bookmark__btn">
+                        <i class="bookmark__icon ${this._data.bookmark ? 'fas fa-bookmark' : 'far fa-bookmark'}"></i>
+                    </p>
+                </figure>
+                <div class="recipe__details">
+                    <p class="recipe__info">
+                        <i class="far fa-clock"></i> 
+                        <span class="recipe__info--minute">${this._data.cooking_time} </span>
+                        <span>minutes</span>
+                    </p>
+                    <p class="recipe__info recipe__info--right">
+                        <i class="fas fa-users"></i> 
+                        <span>Servings</span>
+                        <span class="recipe__info--people">${this._data.servings}</span>
 
-                    <button class="btn__servings btn__update-servings" data-serving="${this._data.servings - 1}">
-                        <i class="recipe__icon--minus fas fa-minus-circle"></i>
-                    </buttons>
-                    <button class="btn__servings btn__update-servings" data-serving="${this._data.servings + 1}">
-                        <i class="recipe__icon--plus fas fa-plus-circle"></i>
-                    </buttons>
-                </p>
-            </div>
+                        <button class="btn__servings btn__update-servings" data-serving="${this._data.servings - 1}">
+                            <i class="recipe__icon--minus fas fa-minus-circle"></i>
+                        </buttons>
+                        <button class="btn__servings btn__update-servings" data-serving="${this._data.servings + 1}">
+                            <i class="recipe__icon--plus fas fa-plus-circle"></i>
+                        </buttons>
+                    </p>
+                </div>
             </div>
 
             <div class="recipe__ingredients">
-            <ul class="recipe__ingredients-list">
-                <figure class="recipe__ingredients-list--icon">
-                    <img src="https://img.icons8.com/external-justicon-lineal-justicon/64/000000/external-cooking-cooking-justicon-lineal-justicon-1.png"/>
-                </figure>
-                ${this._data.ingredients.map(ing => {
-                    return `
-                    <li class="recipe__ingredient">
-                        <i class="recipe__ingredient--icon fas fa-check"></i>
-                        <span class="recipe__quantity">${ing.quantity ? ing.quantity : ''}</span>
-                        <span class="recipe__unite">${ing.unit}</span>
-                        <span class="recipe__description">${ing.description}</span>
-                    </li>
-                    `
-                }).join('')}
-            </ul>
+                <ul class="recipe__ingredients-list">
+                    <figure class="recipe__ingredients-list--icon">
+                        <img src="https://img.icons8.com/external-justicon-lineal-justicon/64/000000/external-cooking-cooking-justicon-lineal-justicon-1.png"/>
+                    </figure>
+                    ${this._data.ingredients.map(ing => {
+                        return `
+                        <li class="recipe__ingredient">
+                            <i class="recipe__ingredient--icon fas fa-check"></i>
+                            <span class="recipe__quantity">${ing.quantity ? ing.quantity : ''}</span>
+                            <span class="recipe__unite">${ing.unit}</span>
+                            <span class="recipe__description">${ing.description}</span>
+                        </li>
+                        `
+                    }).join('')}
+                </ul>
             </div>
         </div>
         `;

@@ -114,8 +114,8 @@ function controlPagination(goTo) {
     paginationView.render(model.state.search);
 }
 
-function controlServising(newSer) {
-    model.updateServising(newSer);
+function controlServing(newSer) {
+    model.updateServings(newSer);
     recipeView.update(model.state.recipe);
 }
 
@@ -148,7 +148,7 @@ function init() {
     searchView.addHandlerInputValue(controlResults);
     linkResultsView.addHandlerRender(controlLinkResults);
     paginationView.addHandlerRender(controlPagination);
-    recipeView.addHandlerServings(controlServising);
+    recipeView.addHandlerServings(controlServing);
     sliderView.addHandlerRender(controlSlider);
     popupView.addHandlerPopup(controlPopup);
     resultsView.addHandlerScroll(scrollToRecipe);
