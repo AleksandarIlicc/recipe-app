@@ -8,8 +8,9 @@ class LinkResultsView extends View {
     addHandlerRender(handler) {
         this._dropDown.addEventListener('click', (e) => {
             const dropDownLink = e.target.closest('.dropdown__link');
+            if (!dropDownLink) return;
             const query = dropDownLink.innerText.toLowerCase();
-            if(!query) return;
+            if (!query) return;
             handler(query);
         });
     }
@@ -30,7 +31,7 @@ class LinkResultsView extends View {
                     </a>
                 </li> 
             `;
-        }).join(''); 
+        }).join('');
     }
 }
 

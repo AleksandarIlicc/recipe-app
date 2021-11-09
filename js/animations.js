@@ -147,8 +147,8 @@ export function scrollToRecipeSeciton() {
 
 //////////////////////////
 // DropDown
-const dropdownBtns = document.querySelectorAll('.dropdown__btn');
 const dropdown = document.querySelectorAll('.dropdown__list');
+const dropdownBtns = document.querySelectorAll('.dropdown__btn');
 const navIcon = document.querySelectorAll('.nav__icon');
 
 dropdownBtns.forEach(btn => {
