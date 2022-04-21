@@ -1,705 +1,712 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="author" content="Aleksandar Ilic" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta http-equiv="X-UA-Campatibile" content="ie=edge" />
-    <!-- CSS CUSTOM -->
-    <link rel="stylesheet" type="text/css" href="./sass/main.css" />
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- AWESOME FONT ICONS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-    <!-- Leaflet map CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="Aleksandar Ilic" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Campatibile" content="ie=edge" />
+  <!-- CSS CUSTOM -->
+  <link rel="stylesheet" type="text/css" href="./sass/main.css" />
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- AWESOME FONT ICONS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <!-- Leaflet map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-    <!-- Leaflet map JAVASCRIPT -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    crossorigin="" />
+  <!-- Leaflet map JAVASCRIPT -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
-    <!-- JAVASCRIPT -->
-    <script type="module" src="/js/controller.js"></script>
+  <!-- JAVASCRIPT -->
+  <script type="module" src="/js/controller.js"></script>
 
-    <title>All Repice</title>
-  </head>
+  <title>All Repice</title>
+</head>
 
-  <body>
+<body>
 
-    <nav class="nav">
-      <div class="nav__bar">
-        <div class="nav__menu">
-          <img src="https://img.icons8.com/color/48/000000/hamburger.png"/>
-          <span>menu</span>
-        </div>
+  <nav class="nav">
+    <div class="nav__bar">
+      <div class="nav__menu">
+        <img src="https://img.icons8.com/color/48/000000/hamburger.png" />
+        <span>main menu</span>
       </div>
-
-      <div class="nav__logo"><a href="index.html">AllRecipe</a><i class="fas fa-utensils"></i></div>
-
-      <form class="search">
-        <input type="text" class="search__input" placeholder="Find a Recipe">
-        <i class="search__icon fas fa-search"></i>
-      </form>
-
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a href="index.html" class="nav__link">Home</a>
-        </li>
-        <li class="nav__item">
-          <a href="#section--3" class="nav__link">Recipe</a>
-          <i class="nav__icon dropdown__btn fas fa-chevron-right"></i>
-          <ul class="dropdown dropdown__list">
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__link">Pizza</a>
-              <i class="dropdown__icon subMenu__btn fas fa-chevron-right"></i>
-              <ul class="sub-dropdown">
-                <li class="dropdown__item">
-                  <a href="#" class="dropdown__link">Veggie</a>
-                </li>
-                <li class="dropdown__item">
-                  <a href="#" class="dropdown__link">Greek</a>
-                </li>
-                <li class="dropdown__item">
-                  <a href="#" class="dropdown__link">Mexican</a>
-                </li>
-                <li class="dropdown__item">
-                  <a href="#" class="dropdown__link">Pepperoni</a>
-                </li>
-                <li class="dropdown__item">
-                  <a href="#" class="dropdown__link">BBQ</a>
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__link">Pasta</a>
-              <i class="dropdown__icon subMenu__btn fas fa-chevron-right"></i>
-              <ul class="sub-dropdown">
-                <li class="dropdown__item">
-                  <a href="#" class="dropdown__link">Carbonara</a>
-                </li>
-                <li class="dropdown__item">
-                  <a href="#" class="dropdown__link">Seafood</a>
-                </li>
-                <li class="dropdown__item">
-                  <a href="#" class="dropdown__link">Bacon</a>
-                </li>
-                <li class="dropdown__item">
-                  <a href="#" class="dropdown__link">Lobster</a>
-                </li>
-                <li class="dropdown__item">
-                  <a href="#" class="dropdown__link">Asparagus</a>
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__link">Salad</a>
-              
-            </li>
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__link">Cake</a>
-              
-            </li>
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__link">Avocado</a>
-              
-            </li>
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__link">Chicken</a>
-              
-            </li>
-          </ul>
-        </li>
-        <li class="nav__item">
-          <a href="#section--4" class="nav__link">Restaurants</a>
-          <i class="nav__icon dropdown__btn fas fa-chevron-right"></i>
-          <ul class="dropdown dropdown__list">
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__link">The Old Stamp House Restaurant</a>
-            </li>
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__link">Taverne Trinacria</a>
-            </li>
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__link">Kiss Me Lounge</a>
-            </li>
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__link">Restaurant Grüne Lampe</a>
-            </li>
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__link">Sophia's Restaurant</a>
-            </li>
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__link">Restoran Trpeza</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav__item">
-          <a href="#section--6" class="nav__link">Chefs</a>
-        </li>
-        <li class="nav__item">
-          <a href="#" class="nav__link bookmark__btn">Bookmarks</a>
-          <i class="nav__icon dropdown__btn fas fa-chevron-right"></i>
-          <ul class="bookmark__list dropdown dropdown__list">
-          </ul>
-        </li>
-        
-        <div class="nav__times">
-          <i class="nav__times--icon fas fa-times"></i>
-        </div>
-      </ul>
-
-      <div class="nav__log-in">
-        <li class="nav__item"><a href="#" class="nav__link">Log in</a></li>
-      </div>
-
-      <div class="progressBar__box">
-        <div class="progressBar__bar"></div>
-      </div>
-
-      
-    </nav>
-    
-    <div class="form">
-      <div class="form__forms">
-
-        <div id="signUp">
-          <div class="form__box">
-              <div class="form__box--left">
-                <h2 class="heading__secondary form__heading mb-medium">Sing Up</h2>
-                <form action="#" class="form__form form__signUp mb-meduim">
-                  <div class="field username mb-medium">
-                    <label for="#" class="form__label">Username:</label>
-                    <div class="input-area">
-                      <input type="text" class="" placeholder="Username...">
-                      <i class="form__icon errorIcon fas fa-exclamation-circle"></i>
-                    </div>
-                    <p class="form-error--text error">Username can't be blank</p>
-                  </div>
-
-                  <div class="field email mb-medium">
-                    <label for="#" class="form__label">Email:</label>
-                    <div class="input-area">
-                      <input type="email" placeholder="Email...">
-                      <i class="form__icon errorIcon fas fa-exclamation-circle"></i>
-                    </div>
-                    <p class="form-error--text error">Email can't be blank</p>
-                    <p class="form-error--text errorInvalid">Invalid email address. Please try again</p>
-                  </div>
-                
-                  <div class="field password mb-medium">
-                    <label for="#" class="form__label">Password:</label>
-                    <div class="input-area">
-                      <input type="password" placeholder="Password...">
-                      <i class="form__icon errorIcon fas fa-exclamation-circle"></i>
-                    </div>
-                    <p class="form-error--text error">Password can't be blank</p>
-                    <p class="form-error--text errorLenght">Password must be at least 8 characters</p>
-                  </div>
-
-                  <input type="submit" value="Sign Up">
-                </form>
-                <div class="form__text mt-small">
-                  <h3><a href="#">Log in</a> or <a href="#">create an account</a> here?</h3>
-                </div>
-              </div>
-              <div class="form__box--right"></div>
-          </div>
-        </div>
-
-        <div id="logIn">
-          <div class="form__box">
-              <div class="form__box--left">
-                <h2 class="heading__secondary form__heading mb-medium">Log In</h2>
-                <form action="#" class="form__form form__logIn mb-meduim">
-                  <div class="field email mb-medium">
-                    <label for="#" class="form__label">Email:</label>
-                    <div class="input-area">
-                      <input type="email" placeholder="Email...">
-                      <i class="form__icon errorIcon fas fa-exclamation-circle"></i>
-                    </div>
-                    <p class="form-error--text error">Email can't be blank</p>
-                    <p class="form-error--text errorInvalid">Invalid email address. Please try again</p>
-                  </div>
-                  
-                  <div class="field password mb-medium">
-                    <label for="#" class="form__label">Password:</label>
-                    <div class="input-area">
-                      <input type="password" placeholder="Password...">
-                      <i class="form__icon errorIcon fas fa-exclamation-circle"></i>
-                    </div>
-                    <p class="form-error--text error">Password can't be blank</p>
-                    <p class="form-error--text errorLenght">Password must be at least 8 characters</p>
-                  </div>
-
-                  <input type="submit" value="Log in">
-                </form>
-                <div class="form__text mt-small">
-                  <h3><a href="#">Log in</a> or <a href="#">create an account</a> here?</h3>
-                </div>
-              </div>
-              <div class="form__box--right"></div>
-          </div>
-        </div>
-
-      </div>
-
-        <div class="form__times">
-          <i class="form__times--icon fas fa-times"></i>
-        </div>
-
-        <div class="form__buttons">
-          <button id="logInBtn" class="btn__form">Log In</button>
-          <button id="signUpBtn" class="btn__form">Sign Up</button>
-        </div>
     </div>
 
-    <header class="header">
+    <div class="nav__logo"><a href="index.html">AllRecipe</a><i class="fas fa-utensils"></i></div>
 
-      <div class="header__description">
-        <p>
-          Whether you're after an old favourite or inspiration for something new, we have the perfect recipe.
-        </p>
-        <h1 class="heading__primary">Look for a recipe like <span class="header__recipe"></span></h1>
+    <form class="search">
+      <input type="text" class="search__input" placeholder="Find a Recipe">
+      <i class="search__icon fas fa-search"></i>
+    </form>
+
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="index.html" class="nav__link">Home</a>
+      </li>
+      <li class="nav__item">
+        <a href="#section--3" class="nav__link">Recipe</a>
+        <i class="nav__icon dropdown__btn fas fa-chevron-right"></i>
+        <ul class="dropdown dropdown__list">
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">Pizza</a>
+            <i class="dropdown__icon subMenu__btn fas fa-chevron-right"></i>
+            <ul class="sub-dropdown">
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">Veggie</a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">Greek</a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">Mexican</a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">Pepperoni</a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">BBQ</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">Pasta</a>
+            <i class="dropdown__icon subMenu__btn fas fa-chevron-right"></i>
+            <ul class="sub-dropdown">
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">Carbonara</a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">Seafood</a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">Bacon</a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">Lobster</a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="dropdown__link">Asparagus</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">Salad</a>
+
+          </li>
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">Cake</a>
+
+          </li>
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">Avocado</a>
+
+          </li>
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">Chicken</a>
+
+          </li>
+        </ul>
+      </li>
+      <li class="nav__item">
+        <a href="#section--4" class="nav__link">Restaurants</a>
+        <i class="nav__icon dropdown__btn fas fa-chevron-right"></i>
+        <ul class="dropdown dropdown__list">
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">The Old Stamp House Restaurant</a>
+          </li>
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">Taverne Trinacria</a>
+          </li>
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">Kiss Me Lounge</a>
+          </li>
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">Restaurant Grüne Lampe</a>
+          </li>
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">Sophia's Restaurant</a>
+          </li>
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">Restoran Trpeza</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav__item">
+        <a href="#section--6" class="nav__link">Chefs</a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link bookmark__btn">Bookmarks</a>
+        <i class="nav__icon dropdown__btn fas fa-chevron-right"></i>
+        <ul class="bookmark__list dropdown dropdown__list">
+        </ul>
+      </li>
+
+      <div class="nav__times">
+        <i class="nav__times--icon fas fa-times"></i>
       </div>
-    </header>
+    </ul>
 
-    <section id="section--1" class="section--social-media">
+    <div class="nav__log-in">
+      <li class="nav__item"><a href="#" class="nav__link">Log in</a></li>
+    </div>
 
-        <div class="counter__container">
-          <div class="counter__social-media counter__social-media--facebook">
-            <div class="counter__box">
-              <img src="https://img.icons8.com/fluency/48/000000/facebook-new.png" class="counter__icon"/>
-              <p class="counter__counter" data-counter="32312"></p>
-              <p class="counter__social-media-name">Facebook</p>
+    <div class="progressBar__box">
+      <div class="progressBar__bar"></div>
+    </div>
+
+
+  </nav>
+
+  <div class="form">
+    <div class="form__forms">
+
+      <div id="signUp">
+        <div class="form__box">
+          <div class="form__box--left">
+            <h2 class="heading__secondary form__heading mb-medium">Sing Up</h2>
+            <form action="#" class="form__form form__signUp mb-meduim">
+              <div class="field username mb-medium">
+                <label for="#" class="form__label">Username:</label>
+                <div class="input-area">
+                  <input type="text" class="" placeholder="Username...">
+                  <i class="form__icon errorIcon fas fa-exclamation-circle"></i>
+                </div>
+                <p class="form-error--text error">Username can't be blank</p>
+              </div>
+
+              <div class="field email mb-medium">
+                <label for="#" class="form__label">Email:</label>
+                <div class="input-area">
+                  <input type="email" placeholder="Email...">
+                  <i class="form__icon errorIcon fas fa-exclamation-circle"></i>
+                </div>
+                <p class="form-error--text error">Email can't be blank</p>
+                <p class="form-error--text errorInvalid">Invalid email address. Please try again</p>
+              </div>
+
+              <div class="field password mb-medium">
+                <label for="#" class="form__label">Password:</label>
+                <div class="input-area">
+                  <input type="password" placeholder="Password...">
+                  <i class="form__icon errorIcon fas fa-exclamation-circle"></i>
+                </div>
+                <p class="form-error--text error">Password can't be blank</p>
+                <p class="form-error--text errorLenght">Password must be at least 8 characters</p>
+              </div>
+
+              <input type="submit" value="Sign Up">
+            </form>
+            <div class="form__text mt-small">
+              <h3><a href="#">Log in</a> or <a href="#">create an account</a> here?</h3>
             </div>
           </div>
-          <div class="counter__social-media counter__social-media--instagram">
-            <div class="counter__box">
-              <img src="https://img.icons8.com/color/48/000000/instagram-new.png" class="counter__icon"/>
-              <p class="counter__counter" data-counter="254719"></p>
-              <p class="counter__social-media-name">Instagram</p>
+          <div class="form__box--right"></div>
+        </div>
+      </div>
+
+      <div id="logIn">
+        <div class="form__box">
+          <div class="form__box--left">
+            <h2 class="heading__secondary form__heading mb-medium">Log In</h2>
+            <form action="#" class="form__form form__logIn mb-meduim">
+              <div class="field email mb-medium">
+                <label for="#" class="form__label">Email:</label>
+                <div class="input-area">
+                  <input type="email" placeholder="Email...">
+                  <i class="form__icon errorIcon fas fa-exclamation-circle"></i>
+                </div>
+                <p class="form-error--text error">Email can't be blank</p>
+                <p class="form-error--text errorInvalid">Invalid email address. Please try again</p>
+              </div>
+
+              <div class="field password mb-medium">
+                <label for="#" class="form__label">Password:</label>
+                <div class="input-area">
+                  <input type="password" placeholder="Password...">
+                  <i class="form__icon errorIcon fas fa-exclamation-circle"></i>
+                </div>
+                <p class="form-error--text error">Password can't be blank</p>
+                <p class="form-error--text errorLenght">Password must be at least 8 characters</p>
+              </div>
+
+              <input type="submit" value="Log in">
+            </form>
+            <div class="form__text mt-small">
+              <h3><a href="#">Log in</a> or <a href="#">create an account</a> here?</h3>
             </div>
           </div>
-          <div class="counter__social-media counter__social-media--twitter">
-            <div class="counter__box">
-              <img src="https://img.icons8.com/fluency/48/000000/twitter.png" class="counter__icon"/>
-              <p class="counter__counter" data-counter="15233"></p>
-              <p class="counter__social-media-name">Twitter</p>
-            </div>
+          <div class="form__box--right"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form__times">
+      <i class="form__times--icon fas fa-times"></i>
+    </div>
+
+    <div class="form__buttons">
+      <button id="logInBtn" class="btn__form">Log In</button>
+      <button id="signUpBtn" class="btn__form">Sign Up</button>
+    </div>
+  </div>
+
+  <header class="header">
+
+    <div class="header__description">
+      <p>
+        Whether you're after an old favourite or inspiration for something new, we have the perfect recipe.
+      </p>
+      <h1 class="heading__primary">Look for a recipe like <span class="header__recipe"></span></h1>
+    </div>
+  </header>
+
+  <section id="section--1" class="section--social-media">
+
+    <div class="counter__container">
+      <div class="counter__social-media counter__social-media--facebook">
+        <div class="counter__box">
+          <img src="https://img.icons8.com/fluency/48/000000/facebook-new.png" class="counter__icon" />
+          <p class="counter__counter" data-counter="32312"></p>
+          <p class="counter__social-media-name">Facebook</p>
+        </div>
+      </div>
+      <div class="counter__social-media counter__social-media--instagram">
+        <div class="counter__box">
+          <img src="https://img.icons8.com/color/48/000000/instagram-new.png" class="counter__icon" />
+          <p class="counter__counter" data-counter="254719"></p>
+          <p class="counter__social-media-name">Instagram</p>
+        </div>
+      </div>
+      <div class="counter__social-media counter__social-media--twitter">
+        <div class="counter__box">
+          <img src="https://img.icons8.com/fluency/48/000000/twitter.png" class="counter__icon" />
+          <p class="counter__counter" data-counter="15233"></p>
+          <p class="counter__social-media-name">Twitter</p>
+        </div>
+      </div>
+      <div class="counter__social-media counter__social-media--youtube">
+        <div class="counter__box">
+          <img src="https://img.icons8.com/color/48/000000/youtube-play.png" class="counter__icon" />
+          <p class="counter__counter" data-counter="473623"></p>
+          <p class="counter__social-media-name">Youtube</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="section--2" class="flex-container">
+
+    <div class="results results__section">
+      <div class="results__all"></div>
+      <ul class="results__list"></ul>
+      <div class="pagination"></div>
+    </div>
+
+    <div class="recipe recipe__section">
+      <div class="recipe__container">
+
+        <div class="recipe__slider">
+          <h1 class="heading__primary recipe__slider-title">
+            What to cook today?
+          </h1>
+          <div class="recipe__overlay"></div>
+          <div class="recipe__slide">
+            <img src="./images/pexels-elevate-1267320.jpg" alt="">
           </div>
-          <div class="counter__social-media counter__social-media--youtube">
-            <div class="counter__box">
-              <img src="https://img.icons8.com/color/48/000000/youtube-play.png" class="counter__icon"/>
-              <p class="counter__counter" data-counter="473623"></p>
-              <p class="counter__social-media-name">Youtube</p>
-            </div>
+          <div class="recipe__slide">
+            <img src="http://forkify-api.herokuapp.com/images/BBQChickenPizza3e2b.jpg" alt="">
           </div>
+          <div class="recipe__slide">
+            <img src="http://forkify-api.herokuapp.com/images/capresefc49.jpg" alt="">
+          </div>
+          <div class="recipe__slide">
+            <img src="http://forkify-api.herokuapp.com/images/TropicalCucumberAvocadoSalad3e39.jpg" alt="">
+          </div>
+          <button class="btn__slider btn__slider--left">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="btn__slider btn__slider--right">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
 
-    </section>
+        <div class="recipe__text">
+          <h1 class="heading__primary recipe__title mb-small">Inspiration</h1>
+          <p class="paragraph">
+            If there’s one thing we know for sure, it’s that cooking is a way we can bring some order—and just
+            as importantly, a sense of pleasure—into our lives right now. We’ve got you covered with recipes,
+            cooking tips, and everything else you need to feel empowered in the kitchen.
+          </p>
+        </div>
 
-    <section id="section--2" class="flex-container">
+      </div>
+    </div>
 
-      <div class="results results__section">
-        <div class="results__all"></div>
-        <ul class="results__list"></ul>
-        <div class="pagination"></div>
+  </section>
+
+  <section id="section--3" class="section">
+
+    <h1 class="heading__primary--large center-tx mt-medium">More recipes collections and ideas</h1>
+
+    <div class="grid__container"></div>
+    <div class="popup">
+      <div class="popup__icon">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="popup__box"></div>
+    </div>
+
+  </section>
+
+  <section id="section--4" class="section">
+
+    <h1 class="heading__primary--large center-tx mt-medium">Best Fine Dining Restaurants</h1>
+
+    <div class="restaurant__container">
+      <div class="restaurant__restaurants">
+        <div class="restaurant__box" data-coords="1">
+          <figure class="restaurant__img">
+            <img src="./images/restaurant--1.jpg" alt="">
+          </figure>
+          <div class="restaurant__content">
+            <h2 class="heading__secondary">The Old Stamp House Restaurant</h2>
+            <p class="restaurant__address">89 Rue de Bagnolet, 75020 Paris</p>
+            <p class="restaurant__quot mt-large">
+              “All the staff want you to enjoy every moment of every course.
+              Knowledge and love of food and where and how it is sourced. And you will enjoy every mouthful.”
+            </p>
+          </div>
+        </div>
+        <div class="restaurant__box" data-id="2">
+          <figure class="restaurant__img">
+            <img src="./images/restaurant--2.jpg" alt="">
+          </figure>
+          <div class="restaurant__content">
+            <h2 class="heading__secondary">Taverne Trinacria</h2>
+            <p class="restaurant__address">Via Scribonio Curione, 42, 00175 Rome</p>
+            <p class="restaurant__quot mt-large">
+              “Utterly wonderful gem with sublime food and outstanding service ”
+            </p>
+            <p class="restaurant__quot mt-large">
+              “Great food, service and atmosphere. Perfect to celebrate a special occasion.”
+            </p>
+          </div>
+        </div>
+        <div class="restaurant__box" data-id="3">
+          <figure class="restaurant__img">
+            <img src="./images/restaurant--3.jpg" alt="">
+          </figure>
+          <div class="restaurant__content">
+            <h2 class="heading__secondary">Kiss Me Lounge</h2>
+            <p class="restaurant__address">326 Essex Road, N1 3PB London</p>
+            <p class="restaurant__quot mt-large">
+              “The best combinations of flavors we have ever experienced. The meal was culinary poetry.”
+            </p>
+          </div>
+        </div>
+        <div class="restaurant__box" data-id="4">
+          <figure class="restaurant__img">
+            <img src="./images/restaurant--4.jpg" alt="">
+          </figure>
+          <div class="restaurant__content">
+            <h2 class="heading__secondary">Restaurant Grüne Lampe</h2>
+            <p class="restaurant__address">Uhlandstraße 51, 10719 Berlin</p>
+            <p class="restaurant__quot mt-large">
+              “Truly a dream. From local ingredients, the chef conjures up aromas, textures and flavors you've never
+              experienced. The stuff of legend. WOW!”
+            </p>
+          </div>
+        </div>
+        <div class="restaurant__box" data-id="5">
+          <figure class="restaurant__img">
+            <img src="./images/restaurant--5.jpg" alt="">
+          </figure>
+          <div class="restaurant__content">
+            <h2 class="heading__secondary">Sophia's Restaurant</h2>
+            <p class="restaurant__address">Corso Sempione, 91, 20149 Milan</p>
+            <p class="restaurant__quot mt-large">
+              “Worth every cent for a divine experience”
+            </p>
+            <p class="restaurant__quot mt-large">
+              “Fantastic dinner with a warm welcome”
+            </p>
+          </div>
+        </div>
+        <div class="restaurant__box" data-id="6">
+          <figure class="restaurant__img">
+            <img src="./images/restaurant--7.jpg" alt="">
+          </figure>
+          <div class="restaurant__content">
+            <h2 class="heading__secondary">Restoran Trpeza</h2>
+            <p class="restaurant__address">Vrbaska 4, Nis 18000</p>
+            <p class="restaurant__quot mt-large">
+              “Great philosophy, superbly executed”
+            </p>
+            <p class="restaurant__quot mt-large">
+              ”The food and the wine was fantastic!”
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="restaurant__map">
+        <div id="map"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="section--5" class="section">
+
+    <h1 class="heading__primary--large center-tx mt-large">Food Photos &amp; Recipes Galleries</h1>
+
+    <div class="gallery">
+      <div class="gallery__img gallery__img--1">
+        <img src="./images/gallery/gallery--1.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--2">
+        <img src="./images/gallery/gallery--2.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--3">
+        <img src="./images/gallery/gallery--3.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--4">
+        <img src="./images/gallery/gallery--4.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--5">
+        <img src="./images/gallery/gallery--5.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--6">
+        <img src="./images/gallery/gallery--6.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--7">
+        <img src="./images/gallery/gallery--7.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--8">
+        <img src="./images/gallery/gallery--8.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--9">
+        <img src="./images/gallery/gallery--9.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--10">
+        <img src="./images/gallery/gallery--10.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--11">
+        <img src="./images/gallery/gallery--11.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--12">
+        <img src="./images/gallery/gallery--12.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--13">
+        <img src="./images/gallery/gallery--13.jpg" alt="">
+      </div>
+      <div class="gallery__img gallery__img--14">
+        <img src="./images/gallery/gallery--14.jpg" alt="">
+      </div>
+    </div>
+
+  </section>
+
+  <section id="section--6" class="section">
+
+    <h1 class="heading__primary mt-large center-tx">3 Top Michelin Star Chefs in 2021</h1>
+
+    <div class="chef">
+      <div class="tabs">
+        <button class="tabs__tab tabs__tab--1 tabs__tab--active" data-tab="1">James Franco</button>
+        <button class="tabs__tab tabs__tab--2" data-tab="2">Anne McNulty</button>
+        <button class="tabs__tab tabs__tab--3" data-tab="3">Yoshihiro Kishimoto</button>
       </div>
 
-      <div class="recipe recipe__section">
-        <div class="recipe__container">
-
-          <div class="recipe__slider">
-            <h1 class="heading__primary recipe__slider-title">
-              What to cook today?
-            </h1>
-            <div class="recipe__overlay"></div>
-            <div class="recipe__slide">
-              <img src="./images/pexels-elevate-1267320.jpg" alt="">
-            </div>
-            <div class="recipe__slide">
-              <img src="http://forkify-api.herokuapp.com/images/BBQChickenPizza3e2b.jpg" alt="">
-            </div>
-            <div class="recipe__slide">
-              <img src="http://forkify-api.herokuapp.com/images/capresefc49.jpg" alt="">
-            </div>
-            <div class="recipe__slide">
-              <img src="http://forkify-api.herokuapp.com/images/TropicalCucumberAvocadoSalad3e39.jpg" alt="">
-            </div>
-            <button class="btn__slider btn__slider--left">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="btn__slider btn__slider--right">
-              <i class="fas fa-chevron-right"></i>
-            </button>
+      <div class="chef__container">
+        <div class="chef__content chef__content--1 chef__content--active">
+          <div class="center-tx">
+            <h2 class="chef__name">James Franco</h2>
           </div>
-
-          <div class="recipe__text">
-            <h1 class="heading__primary recipe__title mb-small">Inspiration</h1>
+          <div class="chef__box--1">
+            <div>
+              <figure class="chef__img">
+                <img src="./images/chef/chef--1.jpg" alt="" class="chef__img">
+              </figure>
+            </div>
+            <div class="chef__text">
+              <h2 class="heading__primary mb-large">The Michelin star</h2>
+              <p class="paragraph">
+                James Franco directs eighteen restaurants across the world. His Alléno Paris
+                au Pavillon Ledoyen is one of the oldest restaurants in Paris, situated in the Champs – Élysées gardens.
+                It’s a constellation of Michelin stars, featuring three star-rated restaurants in the French Michelin
+                Guide 2020.
+                In 2020 Pavillon Ledoyen became the most star-rated independent establishment in the world.
+              </p>
+            </div>
+          </div>
+          <div class="chef__box--2 chef__text mt-large">
+            <h2 class="heading__secondary mb-medium">About Chef</h2>
             <p class="paragraph">
-              If there’s one thing we know for sure, it’s that cooking is a way we can bring some order—and just
-              as importantly, a sense of pleasure—into our lives right now. We’ve got you covered with recipes,
-              cooking tips, and everything else you need to feel empowered in the kitchen.
+              This French chef is not just about getting stars. Since 2013, James Franco has been carrying
+              out research and development on French cuisine to the point of starting his own culinary movement,
+              named Modern Cuisine. As part of his research, he closely studied sauces and even patented a technique,
+              Extractions®. James says that this process allows the concentration and perfection of flavours, providing
+              them with texture, a long finish and minerality.
             </p>
           </div>
-
         </div>
-      </div>
-
-    </section>
-
-    <section id="section--3" class="section">
-
-      <h1 class="heading__primary--large center-tx mt-medium">More recipes collections and ideas</h1>
-      
-      <div class="grid__container"></div>
-      <div class="popup">
-        <div class="popup__icon">
-          <i class="fas fa-times"></i>
-        </div>
-        <div class="popup__box"></div>
-      </div>
-      
-    </section>
-
-    <section id="section--4" class="section">
-
-      <h1 class="heading__primary--large center-tx mt-medium">Best Fine Dining Restaurants</h1>
-
-      <div class="restaurant__container">
-        <div class="restaurant__restaurants">
-          <div class="restaurant__box" data-coords="1">
-            <figure class="restaurant__img">
-              <img src="./images/restaurant--1.jpg" alt="">
-            </figure>
-            <div class="restaurant__content">
-              <h2 class="heading__secondary">The Old Stamp House Restaurant</h2>
-              <p class="restaurant__address">89 Rue de Bagnolet, 75020 Paris</p>
-              <p class="restaurant__quot mt-large">
-                “All the staff want you to enjoy every moment of every course.
-                Knowledge and love of food and where and how it is sourced. And you will enjoy every mouthful.”
+        <div class="chef__content chef__content--2">
+          <div class="center-tx">
+            <h2 class="chef__name">Anne McNulty</h2>
+          </div>
+          <div class="chef__box--1 chef__content--reverse">
+            <div>
+              <figure class="chef__img">
+                <img src="./images/chef/chef--2.jpg" alt="" class="chef__img">
+              </figure>
+            </div>
+            <div class="chef__text">
+              <h2 class="heading__primary mb-large">The Michelin star</h2>
+              <p class="paragraph">
+                Anne McNulty is the most decorated Michelin starred female chef in the world, currently
+                holding eight Michelin stars across her five restaurants. For several generations her family
+                has played an integral part in the history of French cuisine. Her family’s restaurant Alen
+                McNulty in Valence originally won three Michelin stars under her grandfather Antoine in 1934 and later,
+                after her father became involved, he also gained the honour of achieving three Michelin stars for the
+                restaurant.
+              </p>
+            </div>
+          </div>
+          <div class="chef__box--2 chef__text mt-large">
+            <h2 class="heading__secondary mb-medium">About Chef</h2>
+            <p class="paragraph">
+              This French chef had no formal culinary training when she assumed leadership of her family’s
+              restaurant Alen McNulty after her father’s death in 1997. After earning three stars for the restaurant,
+              McNulty opened up a second restaurant, Restaurant Anne McNulty, which celebrates her family’s culinary
+              lineage from Valence. It aims to demonstrate the inventive innovative spirit that, as the Michelin Guide
+              itself says, “binds the history of the Anne family with that of French gastronomy.”
             </p>
+          </div>
+        </div>
+        <div class="chef__content chef__content--3">
+          <div class="center-tx">
+            <h2 class="chef__name">Yoshihiro Kishimoto</h2>
+          </div>
+          <div class="chef__box--1">
+            <div>
+              <figure class="chef__img">
+                <img src="./images/chef/chef--3.jpg" alt="" class="chef__img">
+              </figure>
+            </div>
+            <div class="chef__text">
+              <h2 class="heading__primary mb-large">The Michelin star</h2>
+              <p class="paragraph">
+                With four restaurants across the world and 7 Michelin stars, this Japanese chef
+                is a culinary icon has been promoting Japanese cuisine for nearly 50 years. Considered
+                as the master of kaiseki cuisine, in 2020 he was named the recipient of the prestigious
+                American Express Icon Award as part of Asia’s 50 Best Restaurants awards programme.
+                He is the third generation of Japanese super chefs to run the century-old Kikunoi
+                restaurant in the Japanese city of Kyoto.
+              </p>
             </div>
           </div>
-          <div class="restaurant__box" data-id="2">
-            <figure class="restaurant__img">
-              <img src="./images/restaurant--2.jpg" alt="">
-            </figure>
-            <div class="restaurant__content">
-              <h2 class="heading__secondary">Taverne Trinacria</h2>
-              <p class="restaurant__address">Via Scribonio Curione, 42, 00175 Rome</p>
-              <p class="restaurant__quot mt-large">
-                “Utterly wonderful gem with sublime food and outstanding service ”
-              </p>
-              <p class="restaurant__quot mt-large">
-                “Great food, service and atmosphere. Perfect to celebrate a special occasion.”
-              </p>
-            </div>
-          </div>
-          <div class="restaurant__box" data-id="3">
-            <figure class="restaurant__img">
-              <img src="./images/restaurant--3.jpg" alt="">
-            </figure>
-            <div class="restaurant__content">
-              <h2 class="heading__secondary">Kiss Me Lounge</h2>
-              <p class="restaurant__address">326 Essex Road, N1 3PB London</p>
-              <p class="restaurant__quot mt-large">
-                “The best combinations of flavors we have ever experienced. The meal was culinary poetry.”
+          <div class="chef__box--2 chef__text mt-large">
+            <h2 class="heading__secondary mb-medium">About Chef</h2>
+            <p class="paragraph">
+              Yoshihiro Kishimoto is the third-generation owner of his family’s century-old three-Michelin-star ryotei
+              [high-end Japanese restaurant], Kikunoi in Kyoto, where he pays tribute to his forefathers’
+              classic kaiseki cuisine through a fresh and modern approach. Taking his expertise international,
+              Yoshihiro's latest venture is Tokimeite, an authentic Waygu restaurant in Mayfair. The expansion of
+              his culinary empire into Europe is not the only sign of his global success. Heston Blumenthal, another
+              Michelin-starred chef on this list.
             </p>
-            </div>
-          </div>
-          <div class="restaurant__box" data-id="4">
-            <figure class="restaurant__img">
-              <img src="./images/restaurant--4.jpg" alt="">
-            </figure>
-            <div class="restaurant__content">
-              <h2 class="heading__secondary">Restaurant Grüne Lampe</h2>
-              <p class="restaurant__address">Uhlandstraße 51, 10719 Berlin</p>
-              <p class="restaurant__quot mt-large">
-                “Truly a dream. From local ingredients, the chef conjures up aromas, textures and flavors you've never experienced. The stuff of legend. WOW!”
-            </p>
-            </div>
-          </div>
-          <div class="restaurant__box" data-id="5">
-            <figure class="restaurant__img">
-              <img src="./images/restaurant--5.jpg" alt="">
-            </figure>
-            <div class="restaurant__content">
-              <h2 class="heading__secondary">Sophia's Restaurant</h2>
-              <p class="restaurant__address">Corso Sempione, 91, 20149 Milan</p>
-              <p class="restaurant__quot mt-large">
-                “Worth every cent for a divine experience”
-              </p>
-              <p class="restaurant__quot mt-large">
-                “Fantastic dinner with a warm welcome”
-              </p>
-            </div>
-          </div>
-          <div class="restaurant__box" data-id="6">
-            <figure class="restaurant__img">
-              <img src="./images/restaurant--7.jpg" alt="">
-            </figure>
-            <div class="restaurant__content">
-              <h2 class="heading__secondary">Restoran Trpeza</h2>
-              <p class="restaurant__address">Vrbaska 4, Nis 18000</p>
-              <p class="restaurant__quot mt-large">
-                “Great philosophy, superbly executed”
-              </p>
-              <p class="restaurant__quot mt-large">
-                ”The food and the wine was fantastic!”
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="restaurant__map">
-          <div id="map"></div>
-        </div>
-      </div>
-
-    </section>
-
-    <section id="section--5" class="section">
-
-      <h1 class="heading__primary--large center-tx mt-large">Food Photos &amp; Recipes Galleries</h1>
-
-      <div class="gallery">
-        <div class="gallery__img gallery__img--1">
-          <img src="./images/gallery/gallery--1.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--2">
-          <img src="./images/gallery/gallery--2.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--3">
-          <img src="./images/gallery/gallery--3.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--4">
-          <img src="./images/gallery/gallery--4.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--5">
-          <img src="./images/gallery/gallery--5.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--6">
-          <img src="./images/gallery/gallery--6.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--7">
-          <img src="./images/gallery/gallery--7.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--8">
-          <img src="./images/gallery/gallery--8.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--9">
-          <img src="./images/gallery/gallery--9.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--10">
-          <img src="./images/gallery/gallery--10.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--11">
-          <img src="./images/gallery/gallery--11.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--12">
-          <img src="./images/gallery/gallery--12.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--13">
-          <img src="./images/gallery/gallery--13.jpg" alt="">
-        </div>
-        <div class="gallery__img gallery__img--14">
-          <img src="./images/gallery/gallery--14.jpg" alt="">
-        </div>        
-      </div>
-
-    </section>
-
-    <section id="section--6" class="section">
-
-      <h1 class="heading__primary mt-large center-tx">3 Top Michelin Star Chefs in 2021</h1>
-
-      <div class="chef">
-        <div class="tabs">
-          <button class="tabs__tab tabs__tab--1 tabs__tab--active" data-tab="1">James Franco</button>
-          <button class="tabs__tab tabs__tab--2" data-tab="2">Anne McNulty</button>
-          <button class="tabs__tab tabs__tab--3" data-tab="3">Yoshihiro Kishimoto</button>
-        </div>
-
-        <div class="chef__container">
-          <div class="chef__content chef__content--1 chef__content--active">
-            <div class="center-tx">
-              <h2 class="chef__name">James Franco</h2>
-            </div>
-            <div class="chef__box--1">
-              <div>
-                <figure class="chef__img">
-                  <img src="./images/chef/chef--1.jpg" alt="" class="chef__img">
-                </figure>
-              </div>
-              <div class="chef__text">
-                <h2 class="heading__primary mb-large">The Michelin star</h2>
-                <p class="paragraph">
-                  James Franco directs eighteen restaurants across the world. His Alléno Paris
-                  au Pavillon Ledoyen is one of the oldest restaurants in Paris, situated in the Champs – Élysées gardens.
-                  It’s a constellation of Michelin stars, featuring three star-rated restaurants in the French Michelin Guide 2020.
-                  In 2020 Pavillon Ledoyen became the most star-rated independent establishment in the world.
-                </p>
-              </div>
-            </div>
-            <div class="chef__box--2 chef__text mt-large">
-              <h2 class="heading__secondary mb-medium">About Chef</h2>
-              <p class="paragraph">
-                This French chef is not just about getting stars. Since 2013, James Franco has been carrying
-                out research and development on French cuisine to the point of starting his own culinary movement,
-                named Modern Cuisine. As part of his research, he closely studied sauces and even patented a technique,
-                Extractions®. James says that this process allows the concentration and perfection of flavours, providing
-                them with texture, a long finish and minerality.
-              </p>
-            </div>
-          </div>
-          <div class="chef__content chef__content--2">
-            <div class="center-tx">
-              <h2 class="chef__name">Anne McNulty</h2>
-            </div>
-            <div class="chef__box--1 chef__content--reverse">
-              <div>
-                <figure class="chef__img">
-                  <img src="./images/chef/chef--2.jpg" alt="" class="chef__img">
-                </figure>
-              </div>
-              <div class="chef__text">
-                <h2 class="heading__primary mb-large">The Michelin star</h2>
-                <p class="paragraph">
-                  Anne McNulty is the most decorated Michelin starred female chef in the world, currently
-                  holding eight Michelin stars across her five restaurants. For several generations her family
-                  has played an integral part in the history of French cuisine. Her family’s restaurant Alen
-                  McNulty in Valence originally won three Michelin stars under her grandfather Antoine  in 1934 and later,
-                  after her father became involved, he also gained the honour of achieving three Michelin stars for the restaurant. 
-                </p>
-              </div>
-            </div>
-            <div class="chef__box--2 chef__text mt-large">
-              <h2 class="heading__secondary mb-medium">About Chef</h2>
-              <p class="paragraph">
-                This French chef had no formal culinary training when she assumed leadership of her family’s
-                restaurant Alen McNulty after her father’s death in 1997. After earning three stars for the restaurant,
-                McNulty opened up a second restaurant, Restaurant Anne McNulty, which celebrates her family’s culinary
-                lineage from Valence. It aims to demonstrate the inventive innovative spirit that, as the Michelin Guide
-                itself says, “binds the history of the Anne family with that of French gastronomy.”
-              </p>
-            </div>
-          </div>
-          <div class="chef__content chef__content--3">
-            <div class="center-tx">
-              <h2 class="chef__name">Yoshihiro Kishimoto</h2>
-            </div>
-            <div class="chef__box--1">
-              <div>
-                <figure class="chef__img">
-                  <img src="./images/chef/chef--3.jpg" alt="" class="chef__img">
-                </figure>
-              </div>
-              <div class="chef__text">
-                <h2 class="heading__primary mb-large">The Michelin star</h2>
-                <p class="paragraph">
-                  With four restaurants across the world and 7 Michelin stars, this Japanese chef
-                  is a culinary icon has been promoting Japanese cuisine for nearly 50 years. Considered
-                  as the master of kaiseki cuisine, in 2020 he was named the recipient of the prestigious
-                  American Express Icon Award as part of Asia’s 50 Best Restaurants awards programme.
-                  He is the third generation of Japanese super chefs to run the century-old Kikunoi
-                  restaurant in the Japanese city of Kyoto.
-                </p>
-              </div>
-            </div>
-            <div class="chef__box--2 chef__text mt-large">
-              <h2 class="heading__secondary mb-medium">About Chef</h2>
-              <p class="paragraph">
-                Yoshihiro Kishimoto is the third-generation owner of his family’s century-old three-Michelin-star ryotei
-                [high-end Japanese restaurant], Kikunoi in Kyoto, where he pays tribute to his forefathers’
-                classic kaiseki cuisine through a fresh and modern approach. Taking his expertise international,
-                Yoshihiro's latest venture is Tokimeite, an authentic Waygu restaurant in Mayfair. The expansion of
-                his culinary empire into Europe is not the only sign of his global success. Heston Blumenthal, another
-                Michelin-starred chef on this list.
-              </p>
-            </div>
           </div>
         </div>
       </div>
+    </div>
 
-    </section>
+  </section>
 
-    <footer class="footer__footer section">
-          <h1 class="heading__primary center-tx mb-large">Stay at the cutting edge of food trends</h1>
+  <footer class="footer__footer section">
+    <h1 class="heading__primary center-tx mb-large">Stay at the cutting edge of food trends</h1>
 
-          <div class="footer__container">
-            <div class="footer__col">
-              <h3 class="heading__tertiary mb-medium">Company Information</h3>
-              <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="footer__link">About Us</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Careers</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Press</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Terms & Conditions</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Privacy Policy</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Discount Policy</a></li>
-              </ul>
-            </div>
-            <div class="footer__col">
-              <h3 class="heading__tertiary mb-medium">Customer Services</h3>
-              <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="footer__link">Delivery</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Returns</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Rewards</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Trade Enquiries</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">FAQs</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Contact Us</a></li>
-              </ul>
-            </div>
-            <div class="footer__col">
-              <h3 class="heading__tertiary mb-medium">What's in Store</h3>
-              <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="footer__link">Ingredients</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Cookware</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Tableware</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Gifts</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Recipes & Blog</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Corporate Food Gifts</a></li>
-              </ul>
-            </div>
-            <div class="footer__col">
-              <h3 class="heading__tertiary mb-medium">Follow Us</h3>
-              <div class="footer__social-media">
-                <img src="https://img.icons8.com/fluency/48/000000/facebook-new.png" class="footer__img"/> <span>Join us on Facebook</span>
-              </div>
-              <div class="footer__social-media">
-                <img src="https://img.icons8.com/fluency/48/000000/twitter.png" class="footer__img"/> <span>Follow us on Twitter</span>
-              </div>
-              <div class="footer__social-media">
-                <img src="https://img.icons8.com/color/48/000000/instagram-new.png" class="footer__img"/> <span>See us on Instagram</span>
-              </div>
-              <div class="footer__social-media">
-                <img src="https://img.icons8.com/color/48/000000/youtube-play.png" class="footer__img"/> <span>Subscribe on Youtube</span>
-              </div>
-            </div>
-          </div>
+    <div class="footer__container">
+      <div class="footer__col">
+        <h3 class="heading__tertiary mb-medium">Company Information</h3>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="#" class="footer__link">About Us</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Careers</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Press</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Terms & Conditions</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Privacy Policy</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Discount Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="heading__tertiary mb-medium">Customer Services</h3>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="#" class="footer__link">Delivery</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Returns</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Rewards</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Trade Enquiries</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">FAQs</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="heading__tertiary mb-medium">What's in Store</h3>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="#" class="footer__link">Ingredients</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Cookware</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Tableware</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Gifts</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Recipes & Blog</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Corporate Food Gifts</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="heading__tertiary mb-medium">Follow Us</h3>
+        <div class="footer__social-media">
+          <img src="https://img.icons8.com/fluency/48/000000/facebook-new.png" class="footer__img" /> <span>Join us on
+            Facebook</span>
+        </div>
+        <div class="footer__social-media">
+          <img src="https://img.icons8.com/fluency/48/000000/twitter.png" class="footer__img" /> <span>Follow us on
+            Twitter</span>
+        </div>
+        <div class="footer__social-media">
+          <img src="https://img.icons8.com/color/48/000000/instagram-new.png" class="footer__img" /> <span>See us on
+            Instagram</span>
+        </div>
+        <div class="footer__social-media">
+          <img src="https://img.icons8.com/color/48/000000/youtube-play.png" class="footer__img" /> <span>Subscribe on
+            Youtube</span>
+        </div>
+      </div>
+    </div>
 
-          <div class="footer__under">
-            <div class="footer__imgBox">
-              <img src="./images/app-store.png" alt="">
-              <img src="./images/play-store.png" alt="">
-            </div>
-            <div class="footer__copyright">
-              <p class="paragraph">
-                © Copyright by Aleksandar Ilic. Use for practice HTML, CSS and JAVASCRIPT.
-              </p>
-            </div>
-          </div>
-    </footer>
+    <div class="footer__under">
+      <div class="footer__imgBox">
+        <img src="./images/app-store.png" alt="">
+        <img src="./images/play-store.png" alt="">
+      </div>
+      <div class="footer__copyright">
+        <p class="paragraph">
+          © Copyright by Aleksandar Ilic. Use for practice HTML, CSS and JAVASCRIPT.
+        </p>
+      </div>
+    </div>
+  </footer>
 
-  </body>
+</body>
+
 </html>
